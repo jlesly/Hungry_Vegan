@@ -25,6 +25,7 @@ module HungryVegan
             else
                 invalid_entry
             end
+                main_menu_option
         end 
 
         def get_restaurants
@@ -49,11 +50,12 @@ module HungryVegan
                 puts "\nExiting program. Come back soon!\n"
                 exit 
             elsif 
-                input.to_i.0 && input.to_i<=restaurant_array.size
+                input.to_i>0 && input.to_i<=restaurant_array.size
                 selected_restaurant_info(input)
             else
                 puts "Error. Invalid entry."
                 select_restaurant
+                main_menu_option
             end
         end
         
@@ -72,6 +74,19 @@ module HungryVegan
         end
 
         def main_menu_option
+            puts "\n\nWould you like to enter another zip code? Type 'yes' or 'no'\n\n"
+            input = gets.strip
+            
+            if input.downcase == "yes"
+                call
+            elsif input.downcase == "no"
+                puts "\nGoodbye. Come back soon!\n"
+            else
+                invalid_entry
+                main_menu_option
+            end 
         end 
+
     end
+end
 end
