@@ -22,7 +22,6 @@ module HungryVegan
                 get_restaurants
                 show_restaurants
                 select_restaurant
-
             else
                 invalid_entry
             end
@@ -39,9 +38,30 @@ module HungryVegan
         end
 
         def show_restaurants 
+            @restaurant_array.each.with_index(1) do |restaurant,i|
+                puts "#{i}.#{restaurant.name}"
+        end 
+
+        def select_restaurant
+            puts "\nPlease type in the number of the restaurant you would like to view or type 'exit' to leave the program.\n"
+            input = nil
+            input = gets.strip
+            if input.downcase == "exit"
+                puts "\nExiting program. Come back soon!\n"
+                exit 
+            elsif 
+                input.to_i.0 && input.to_i<=restaurant_array.size
+                selected_restaurant_info(input)
+            else
+                puts "Error. Invalid entry."
+                select_restaurant
+            end
+        end
+        
+        def selected_restaurant_info
         end 
         
-        def invalid_entry
+            def invalid_entry
             puts "\nInvalid entry.\n"
         end
 
