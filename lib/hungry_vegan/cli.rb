@@ -25,7 +25,6 @@ module HungryVegan
             else
                 invalid_entry
             end
-
         end 
 
         def get_restaurants
@@ -59,9 +58,16 @@ module HungryVegan
         end
         
         def selected_restaurant_info
+            if @restaurant_array[index.to_i-1].class==Restaurant
+                restaurant=restaurant_array[index.to_i-1]
+            end 
+
+            puts "\n\nHere's more information:\n\n"
+            puts "Name: #{restaurant.name}"
+            puts "Phone Number: #{restaurant.phone_number}"
         end 
-        
-            def invalid_entry
+
+        def invalid_entry
             puts "\nInvalid entry.\n"
         end
 
