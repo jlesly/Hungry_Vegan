@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby 
+
+require_relative '../lib/hungry_vegan'
+
+HungryVegan::Cli.new.call 
