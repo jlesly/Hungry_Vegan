@@ -1,5 +1,8 @@
-class HungryVegan::Restaurant 
-    attr_accessor :id, :name, :address, :rating, :phone_number, :url, :website, :zip, :matching_zip_codes
+module HungryVegan
+
+class Restaurant 
+    
+    attr_accessor :id, :name, :address, :rating, :phone_number, :url, :zip, :matching_zip_codes
 
     @@all = []
 
@@ -41,5 +44,5 @@ class HungryVegan::Restaurant
         def self.get_matching_restaurats(zip)
             self.all.select{|r|r.matching_zip_codes.include?(zip)}
         end
-    end 
+end 
 end

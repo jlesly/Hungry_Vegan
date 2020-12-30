@@ -1,6 +1,9 @@
-class HungryVegan::Cli
-    attr_accessor :restaurant_array, :zip_array, :zip
+module HungryVegan
 
+class Cli
+    
+    attr_accessor :restaurant_array, :zip_array, :zip
+        
         def initialize
             @zip_array = []
         end
@@ -11,8 +14,7 @@ class HungryVegan::Cli
 
             input = nil
             input = gets.strip
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            yellow_lines
             if input.downcase == "exit"
                 puts "\nExiting program. Come back soon!\n".green
                 exit
@@ -25,6 +27,15 @@ class HungryVegan::Cli
                 invalid_entry
             end
                 main_menu_option
+        end 
+        
+        def yellow_lines
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow    
+        end 
+        
+        def yellow_line
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
         end 
 
         def invalid_entry
@@ -46,8 +57,7 @@ class HungryVegan::Cli
         end
 
         def select_restaurant
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            yellow_lines
             puts "\nPlease type in the number of the restaurant you would like to view\n".light_blue
             puts "\nTo exit the program, enter 'exit'.\n".red
             input= nil
@@ -66,12 +76,12 @@ class HungryVegan::Cli
             if @restaurant_array[index.to_i-1].class==Restaurant
                 restaurant=@restaurant_array[index.to_i-1]
             end 
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            yellow_line
             puts "Here's more information:"
             puts "Name: #{restaurant.name}"
             puts "Rating: #{restaurant.rating}"
             puts "Phone Number: #{restaurant.phone_number}"
-            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow          
+            yellow_line        
         end 
 
         def main_menu_option
@@ -89,4 +99,5 @@ class HungryVegan::Cli
         end 
 
     end
+end
 end

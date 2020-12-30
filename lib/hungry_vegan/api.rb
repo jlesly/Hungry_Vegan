@@ -1,9 +1,11 @@
-class HungryVegan::Api 
+module HungryVegan
+
+class Api 
 
     API_HOST = "https://api.yelp.com"
     SEARCH_PATH = "/v3/businesses/search"
     BUSINESS_PATH = "/v3/businesses/"
-    SEARCH_LIMIT = 20
+    SEARCH_LIMIT = 15
 
     def self.search(term, location)
         url = "#{API_HOST}#{SEARCH_PATH}"
@@ -17,3 +19,4 @@ class HungryVegan::Api
         response.parse
     end 
 end 
+end
