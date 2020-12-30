@@ -1,8 +1,10 @@
 module HungryVegan
+    
     class Api 
 
         API_HOST = "https://api.yelp.com"
         SEARCH_PATH = "/v3/businesses/search"
+        BUSINESS_PATH = "/v3/businesses/"
         SEARCH_LIMIT = 20
 
         def self.search(term, location)
