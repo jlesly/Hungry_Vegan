@@ -1,8 +1,6 @@
-# HungryVegan
+# Hungry Vegan
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hungry_vegan`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem uses Yelp Fusion API (https://www.yelp.com/developers/documentation/v3/get_started) to help users find vegan food by entering their zip code. 
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After installation, run the gem in your CLI by executing *hungry_vegan*. Make sure to have installed the required gems beforehand by running *bundle install*. 
 
 ## Development
 
