@@ -6,6 +6,7 @@ require_relative "hungry_vegan/restaurant"
 require "http"
 require "pry"
 require "dotenv/load"
+require "colorize"
 
 
 module HungryVegan

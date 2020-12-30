@@ -8,14 +8,15 @@ module HungryVegan
         end
 
         def call
-            puts "\nWelcome to Hungry Vegan!\n"
-            puts "\nType in your 5-digit zip code to get a list of restaurants in your area or type 'exit' to leave the program.\n"
+            puts "\nWelcome to Hungry Vegan!\n".green
+            puts "\nType in your 5-digit zip code to get a list of restaurants offering vegan options in your area or type 'exit' to leave the program.\n".light_blue
 
             input = nil
             input = gets.strip
-
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
             if input.downcase == "exit"
-                puts "\nExiting program. Come back soon!\n"
+                puts "\nExiting program. Come back soon!\n".green
                 exit
             elsif input.length==5 && input.to_i !=0
                 @zip=input
@@ -29,7 +30,7 @@ module HungryVegan
         end 
 
         def invalid_entry
-            puts "\nInvalid entry.\n"
+            puts "\nError.Invalid entry.\n".red
         end
         
         def get_restaurants
@@ -47,16 +48,18 @@ module HungryVegan
         end
 
         def select_restaurant
-            puts "\nPlease type in the number of the restaurant you would like to view\n"
-            puts "\nTo exit the program, enter 'exit'.\n"
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            puts "\nPlease type in the number of the restaurant you would like to view\n".light_blue
+            puts "\nTo exit the program, enter 'exit'.\n".red
             input= nil
             input = gets.strip
             if input.downcase == "exit"
-                puts "\n\nExiting program. Come back soon!\n\n"
+                puts "\n\nExiting program. Come back soon!\n\n".green
                 exit
             elsif input.to_i>0 && input.to_i<=restaurant_array.size
                 selected_restaurant_info(input)
-            else puts "Error. Invalid entry."
+            else puts "Error. Invalid entry.".red
                 select_restaurant
             end 
         end 
@@ -65,21 +68,22 @@ module HungryVegan
             if @restaurant_array[index.to_i-1].class==Restaurant
                 restaurant=@restaurant_array[index.to_i-1]
             end 
-
-            puts "\n\nHere's more information:\n\n"
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow
+            puts "Here's more information:"
             puts "Name: #{restaurant.name}"
             puts "Rating: #{restaurant.rating}"
             puts "Phone Number: #{restaurant.phone_number}"
+            puts "------------------------------------------------------------------------------------------------------------------------------------------".yellow          
         end 
 
         def main_menu_option
-            puts "\n\nWould you like to enter another zip code? Type 'yes' or 'no'\n\n"
+            puts "\n\nWould you like to enter another zip code? Type 'yes' or 'no'\n\n".light_blue
             input = gets.strip
             
             if input.downcase == "yes"
                 call
             elsif input.downcase == "no"
-                puts "\nGoodbye. Come back soon!\n"
+                puts "\nGoodbye. Come back soon!\n".green
             else
                 invalid_entry
                 main_menu_option

@@ -8,4 +8,5 @@ gem "rspec", "~> 3.0"
 gem "pry"
 gem "dotenv"
 gem "http"
+gem "colorize"
 
