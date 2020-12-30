@@ -16,7 +16,7 @@ class Cli
             input = gets.strip
             yellow_lines
             if input.downcase == "exit"
-                puts "\nExiting program. Come back soon!\n".green
+                exit_program
                 exit
             elsif input.length==5 && input.to_i !=0
                 @zip=input
@@ -39,9 +39,13 @@ class Cli
         end 
 
         def invalid_entry
-            puts "\nError.Invalid entry.\n".red
+            puts "\nError. Invalid entry.\n".red
         end
         
+        def exit_program
+            puts "\n\nExiting program. Come back soon!\n\n".green
+        end 
+
         def get_restaurants
             if @zip_array.include?(@zip)
             @restaurant_array= Restaurant.get_matching_restaurants(@zip)
@@ -63,11 +67,12 @@ class Cli
             input= nil
             input = gets.strip
             if input.downcase == "exit"
-                puts "\n\nExiting program. Come back soon!\n\n".green
+                exit_program
                 exit
             elsif input.to_i>0 && input.to_i<=restaurant_array.size
                 selected_restaurant_info(input)
-            else puts "Error. Invalid entry.".red
+            else 
+                invalid_entry
                 select_restaurant
             end 
         end 
