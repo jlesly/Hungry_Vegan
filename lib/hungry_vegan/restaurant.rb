@@ -1,9 +1,7 @@
-module HungryVegan
-    
-    class Restaurant 
-        attr_accessor :id, :name, :address, :rating, :phone_number, :url, :website, :zip, :matching_zip_codes
+class HungryVegan::Restaurant 
+    attr_accessor :id, :name, :address, :rating, :phone_number, :url, :website, :zip, :matching_zip_codes
 
-        @@all = []
+    @@all = []
 
         def initialize
             

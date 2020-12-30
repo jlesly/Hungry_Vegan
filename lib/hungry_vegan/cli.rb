@@ -1,7 +1,5 @@
-module HungryVegan
-   
-    class Cli
-        attr_accessor :restaurant_array, :zip_array, :zip
+class HungryVegan::Cli
+    attr_accessor :restaurant_array, :zip_array, :zip
 
         def initialize
             @zip_array = []
@@ -91,5 +89,4 @@ module HungryVegan
         end 
 
     end
-end
 end

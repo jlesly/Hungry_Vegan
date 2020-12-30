@@ -32,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_dependency "http"
   spec.add_dependency "dotenv"
+  spec.add_dependency "colorize"
 end
 
