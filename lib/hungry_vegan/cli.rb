@@ -7,9 +7,13 @@ class Cli
         def initialize
             @zip_array = []
         end
-
-        def call
+        
+        def greeting
             puts "\nWelcome to Hungry Vegan!\n".green
+            call
+        end
+        
+        def call
             puts "\nType in your 5-digit zip code to get a list of restaurants offering vegan options in your area or type 'exit' to leave the program.\n".light_blue
 
             input = nil
