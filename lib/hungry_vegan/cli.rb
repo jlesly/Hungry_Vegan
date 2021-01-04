@@ -1,7 +1,6 @@
 module HungryVegan
 
 class Cli
-    
     attr_accessor :restaurant_array, :zip_array, :zip
         
         def initialize
@@ -12,7 +11,7 @@ class Cli
             puts "\nWelcome to Hungry Vegan!\n".green
             call
         end
-        
+
         def call
             puts "\nType in your 5-digit zip code to get a list of restaurants offering vegan options in your area or type 'exit' to leave the program.\n".light_blue
 
