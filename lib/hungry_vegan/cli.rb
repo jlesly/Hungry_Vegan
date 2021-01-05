@@ -7,10 +7,10 @@ class Cli
             @zip_array = []
         end
         
-        def greeting
-            puts "\nWelcome to Hungry Vegan!\n".green
+        def start
+            puts "\nWelcome to Hungry Vegan!\n".blue
             call
-        end
+        end 
 
         def call
             puts "\nType in your 5-digit zip code to get a list of restaurants offering vegan options in your area or type 'exit' to leave the program.\n".light_blue
@@ -20,7 +20,6 @@ class Cli
             yellow_lines
             if input.downcase == "exit"
                 exit_program
-                exit
             elsif input.length==5 && input.to_i !=0
                 @zip=input
                 get_restaurants
@@ -29,7 +28,6 @@ class Cli
             else
                 invalid_entry
             end
-                main_menu_option
         end 
         
         def yellow_lines
@@ -43,10 +41,13 @@ class Cli
 
         def invalid_entry
             puts "\nError. Invalid entry.\n".red
+            puts "\n\nWould you like to enter another zip code? Type 'yes' or 'no'\n\n".light_blue
+            main_menu
         end
         
         def exit_program
             puts "\n\nExiting program. Come back soon!\n\n".green
+            exit
         end 
 
         def get_restaurants
@@ -89,23 +90,22 @@ class Cli
             puts "Name: #{restaurant.name}"
             puts "Rating: #{restaurant.rating}"
             puts "Phone Number: #{restaurant.phone_number}"
-            yellow_line        
+            yellow_line
+            puts "\nWould you like to return to the main screen to enter a new zip code? Type 'yes' or 'no'\n"   
+            main_menu     
         end 
 
-        def main_menu_option
-            puts "\n\nWould you like to enter another zip code? Type 'yes' or 'no'\n\n".light_blue
+        def main_menu
             input = gets.strip
             
             if input.downcase == "yes"
                 call
             elsif input.downcase == "no"
-                puts "\nGoodbye. Come back soon!\n".green
+                exit_program
             else
                 invalid_entry
-                main_menu_option
-            end 
+            end
         end 
-
     end
 end
 end
