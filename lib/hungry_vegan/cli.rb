@@ -91,7 +91,7 @@ class Cli
             puts "Rating: #{restaurant.rating}"
             puts "Phone Number: #{restaurant.phone_number}"
             yellow_line
-            puts "\nWould you like to return to the main screen to enter a new zip code? Type 'yes' or 'no'\n"   
+            puts "\nWould you like to return to the main screen to enter a new zip code? Type 'yes' or 'no'\n".light_blue  
             main_menu     
         end 
 
